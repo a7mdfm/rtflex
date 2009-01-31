@@ -1,3 +1,14 @@
+/**
+ * 
+ * 
+ * RTFlex, ALPHA 0.01, first build
+ * 
+ * By Jonathan Rowny on 1/30/2009, www.jonathanrowny.com/code/
+ * 
+ * Things to do: Clean up code, add meta data, add more comments, add more features!
+ * 
+ **/
+
 package org.RTFlex
 {
 	import flash.net.URLRequest;

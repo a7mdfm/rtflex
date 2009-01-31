@@ -1,3 +1,8 @@
+/**
+ * 
+ *  I'll add more codes later
+ * 
+ **/
 package org.RTFlex
 {
 	public class Language

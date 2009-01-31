@@ -1,3 +1,8 @@
+/**
+ * 
+ *  This class holds some text wrapped in formatting. The format is stored in thef ormat object. 
+ * 
+ **/
 package org.RTFlex
 {
 	
