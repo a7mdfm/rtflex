@@ -3,35 +3,35 @@
 
 = Document Formatting =
 The main RTF object has these properties:
-  *marginLeft,marginRight,marginBottom,marginTop - top,left,right,bottom in "twips"
-  *orientation: landscape or portrait
-  *language: default is english
-  *columns: A number of columns
-  *columnLines: display a line between columns (not supported?)
-  *pageNumbering: true/false, numbers pages 
+  * marginLeft,marginRight,marginBottom,marginTop - top,left,right,bottom in "twips"
+  * orientation: landscape or portrait
+  * language: default is english
+  * columns: A number of columns
+  * columnLines: display a line between columns (not supported?)
+  * pageNumbering: true/false, numbers pages 
 
 = Text Formatting =
-  *Use the Format() object to set these properties, then pass it along.
-  *underline:Boolean;
-  *bold:Boolean;
-  *italic:Boolean;
-  *strike:Boolean;
-  *superScript:Boolean;
-  *subScript:Boolean;
-  *makeParagraph:Boolean;
-  *align:String = use statics from Align (not current implemented)
-  *font: any font string
-  *fontSize; 
-  *leftIndent:int=0;
-  *rightIndent:int=0; 
-  *color: use RGB object
-  *backgroundColor: same as above... doesn't seem to be working
+  * Use the Format() object to set these properties, then pass it along.
+  * underline:Boolean;
+  * bold:Boolean;
+  * italic:Boolean;
+  * strike:Boolean;
+  * superScript:Boolean;
+  * subScript:Boolean;
+  * makeParagraph:Boolean;
+  * align:String = use statics from Align (not currently implemented easy to add)
+  * font: any font string
+  * fontSize; 
+  * leftIndent:int=0;
+  * rightIndent:int=0; 
+  * color: use RGB object
+  * backgroundColor: same as above... doesn't seem to be working
 
 = Other Elements =
-  *addPage(), adds a page
-  *addLineBreak(), adds a line break
-  *addTab(), adds a tab
+  * addPage(), adds a page
+  * addLineBreak(), adds a line break
+  * addTab(), adds a tab
 
 = Saving =
-  *Remote - for flex (sends btyearray to a page to be outputed)
-  *Local - for air (generates bytearray)
+  * Remote - for flex (sends btyearray to a page to be outputed)
+  * Local - for air (generates bytearray)
