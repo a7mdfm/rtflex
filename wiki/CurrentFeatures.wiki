@@ -11,7 +11,7 @@ The main RTF object has these properties:
   * pageNumbering: true/false, numbers pages 
 
 = Text Formatting =
-  * Use the Format() object to set these properties, then pass it along.
+Use the Format() object to set these properties, then pass it along.
   * underline:Boolean;
   * bold:Boolean;
   * italic:Boolean;
@@ -28,6 +28,7 @@ The main RTF object has these properties:
   * backgroundColor: same as above... doesn't seem to be working
 
 = Other Elements =
+These methods are on the main RTF object and can be applied to a group
   * addPage(), adds a page
   * addLineBreak(), adds a line break
   * addTab(), adds a tab
