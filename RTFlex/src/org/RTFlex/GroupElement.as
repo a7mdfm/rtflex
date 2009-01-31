@@ -34,21 +34,10 @@ package org.RTFlex
 			elements.push(element);
 		}
 		public function getRTFCode():String{
-			var rtf:String = "{";
-			if(format.makeParagraph) rtf+="\\pard";
-			rtf+="\\f"+_fontPos.toString();
-			rtf+="\\cb"+(_backgroundColorPos+1).toString();  //Add one because color 0 is null
-			rtf+="\\cf"+(_colorPos+1).toString(); //yup
-			if(format.fontSize >0) rtf+="\\fs"+(format.fontSize*2).toString();
-			if(format.bold) rtf+="\\b";
-			if(format.italic) rtf+="\\i";
-			if(format.underline) rtf+="\\ul";
-			if(format.strike) rtf+="\\strike";
-			if(format.leftIndent>0) rtf+="\\li"+format.leftIndent.toString();
-			if(format.rightIndent>0) rtf+="\\ri"+format.rightIndent.toString();
-			if(format.subScript) rtf+="\\sub";
-			if(format.superScript) rtf+="\\super";
-			
+			return format.formatText(getElementOutput(),_colorPos,_backgroundColorPos,_fontPos,false); //safe text already done in getlementoutput()
+		}
+		private function getElementOutput():String{
+			var rtf:String="";
 			//outputs the elements
 		 	for(var i:int=0;i<elements.length;i++){
 		 		if(elements[i] is TextElement){
@@ -57,10 +46,7 @@ package org.RTFlex
 		 			rtf+=elements[i];
 		 		}
 		 	}
-		 	
-			if(format.makeParagraph) rtf+="\\par";
-			rtf+="}"
-			return rtf;
+		 	return rtf;
 		}
 		
 		
