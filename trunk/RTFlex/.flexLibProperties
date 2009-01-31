@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="org.RTFlex.Method"/>
+<classEntry path="org.RTFlex.Language"/>
+<classEntry path="org.RTFlex.GroupElement"/>
+<classEntry path="org.RTFlex.Fonts"/>
+<classEntry path="org.RTFlex.RTF"/>
+<classEntry path="org.RTFlex.Colors"/>
+<classEntry path="org.RTFlex.RGB"/>
+<classEntry path="org.RTFlex.TextElement"/>
+<classEntry path="org.RTFlex.Format"/>
+<classEntry path="org.RTFlex.Orientation"/>
+<classEntry path="org.RTFlex.Align"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>
