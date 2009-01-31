@@ -53,7 +53,10 @@ package org.RTFlex
 		 * Document modifiers 
 		 * 
 		 **/
-		public function writeText(text:String,format:Format,groupName:String=null):void{
+		public function writeText(text:String,format:Format=null,groupName:String=null):void{
+			if(!format){
+				format = new Format();
+			}
 			checkTables(format);
 			var fontPos:int = fontTable.indexOf(format.font);
 			var colorPos:int = colorTable.indexOf(format.color);
@@ -66,28 +69,7 @@ package org.RTFlex
 				elements.push(element);
 			}
 		} 
-		//page break
-		public function addPage(groupName:String=null):void{
-			if(groupName && groupIndex(groupName)>=0){
-				GroupElement(elements[groupIndex(groupName)]).addElement("\\page");
-			}else{ 
-				elements.push(" \\page ");
-			}
-		}
-		public function addLineBreak(groupName:String=null):void{
-			if(groupName && groupIndex(groupName)>=0){
-				GroupElement(elements[groupIndex(groupName)]).addElement("\\line");
-			}else{
-				elements.push(" \\line ");
-			}
-		}
-		public function addTab(groupName:String=null):void{
-			if(groupName && groupIndex(groupName)>=0){
-				GroupElement(elements[groupIndex(groupName)]).addElement("\\tab");
-			}else{
-				elements.push(" \\tab ");
-			}
-		}
+		
 		public function addTextGroup(name:String,format:Format):void{
 			if(groupIndex(name)<0){//make sure we don't have duplicate groups!
 				checkTables(format);
@@ -98,6 +80,32 @@ package org.RTFlex
 				elements.push(formatGroup);
 			}
 		}
+		
+		//page break
+		public function addPage(groupName:String=null):void{
+			if(groupName && groupIndex(groupName)>=0){
+				GroupElement(elements[groupIndex(groupName)]).addElement("\\page");
+			}else{ 
+				elements.push(" \\page ");
+			}
+		}
+		//line break
+		public function addLineBreak(groupName:String=null):void{
+			if(groupName && groupIndex(groupName)>=0){
+				GroupElement(elements[groupIndex(groupName)]).addElement("\\line");
+			}else{
+				elements.push(" \\line ");
+			}
+		}
+		//tab
+		public function addTab(groupName:String=null):void{
+			if(groupName && groupIndex(groupName)>=0){
+				GroupElement(elements[groupIndex(groupName)]).addElement("\\tab");
+			}else{
+				elements.push(" \\tab ");
+			}
+		}
+		
 		
 		/**
 		 * 
