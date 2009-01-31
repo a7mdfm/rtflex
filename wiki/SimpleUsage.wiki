@@ -1,0 +1,23 @@
+#summary Simple usage
+
+==The basics of creating the rtf==
+{{{
+var document:RTF = new RTF();
+document.writeText("Any text you want goes here",new Format());
+document.save(Method.REMOTE,"save.php","inline","anything.rtf","_blank");
+}}}
+Thinking out loud: format will probably become optional in the future... if not provided, and group is, attempt to inherit from group. If it is supplied and group is supplied the inherit unset values. 
+
+==Formatting Text==
+Use the Format() object, pass it into writeText or addTextGroup. 
+
+==Applying a format to more than one writeText()==
+You can pass the same format object into both writeText calls OR you can create a text group. 
+{{{
+var document:RTF = new RTF();
+var format:Format = new Format();
+format.underline=true;
+document.addTextGroup("UnderlinedText",format);
+document.writeText("Any text you want goes here",new Format(),"UnderlinedText");
+document.writeText("This text isn't part of the group, so it doesn't get the underline", new Format());
+}}}
