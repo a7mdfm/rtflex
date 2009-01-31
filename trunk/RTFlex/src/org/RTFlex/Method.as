@@ -1,3 +1,4 @@
+//Based on AlivePDF's remote/local saving
 package org.RTFlex
 {
 	public class Method

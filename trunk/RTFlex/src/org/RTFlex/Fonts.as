@@ -1,3 +1,8 @@
+/**
+ * 
+ * Feel free to add more... just added this class cuz I was sick of typing the names.
+ * 
+ **/
 package org.RTFlex
 {
 	public class Fonts

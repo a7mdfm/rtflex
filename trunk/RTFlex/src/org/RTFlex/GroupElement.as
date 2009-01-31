@@ -1,3 +1,9 @@
+/**
+ * 
+ *  GroupElement stores a group of elements which should be formatted by it's format... inheritence of the 
+ *  format isn't working yet.  
+ * 
+ **/
 package org.RTFlex
 {
 	

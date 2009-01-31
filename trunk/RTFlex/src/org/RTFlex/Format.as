@@ -1,3 +1,8 @@
+/**
+ * 
+ *  This class just stores what options you have for formatting.
+ * 
+ **/
 package org.RTFlex
 {
 	public class Format
