@@ -57,10 +57,13 @@ package org.RTFlex
 			if(!format){
 				format = new Format();
 			}
-			checkTables(format);
-			var fontPos:int = fontTable.indexOf(format.font);
-			var colorPos:int = colorTable.indexOf(format.color);
+			if(format.font.length>0 || format.color!=null || format.backgroundColor !=null){
+				checkTables(format);
+			}
+			var fontPos:int = fontTable.indexOf(format.font); //should return -1 if not found
+			var colorPos:int = colorTable.indexOf(format.color); 
 			var backgroundColorPos:int = colorTable.indexOf(format.backgroundColor);
+			
 			//might change this to pass only the relevant number
 			var element:TextElement = new TextElement(text,format,colorPos,backgroundColorPos,fontPos);
 			if(groupName && groupIndex(groupName)>=0){
@@ -72,7 +75,9 @@ package org.RTFlex
 		
 		public function addTextGroup(name:String,format:Format):void{
 			if(groupIndex(name)<0){//make sure we don't have duplicate groups!
-				checkTables(format);
+				if(format.font.length>0 || format.color!=null || format.backgroundColor !=null){
+					checkTables(format);
+				}
 				var fontPos:int = fontTable.indexOf(format.font);
 				var colorPos:int = colorTable.indexOf(format.color);
 				var backgroundColorPos:int = colorTable.indexOf(format.backgroundColor);
@@ -151,10 +156,14 @@ package org.RTFlex
 		 }
 		 private function createFontTable():String{
 		 	var table:String = "{\\fonttbl";
-		 	for(var f:int=0;f<fontTable.length;f++){
-		 		table+="{\\f"+f+" "+fontTable[f]+";}";
+		 	if(fontTable.length==0){
+		 		table+="{\\f0 "+Fonts.ARIAL+"}"; //if no fonts are defined, use arial
+		 	}else{			 	
+			 	for(var f:int=0;f<fontTable.length;f++){
+			 		table+="{\\f"+f+" "+fontTable[f]+";}";
+			 	}
 		 	}
-		 	table+="}";
+			table+="}";
 		 	return table; 	
 		 }
 		 private function createDocument():String{

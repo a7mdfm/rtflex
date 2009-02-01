@@ -17,16 +17,15 @@ package org.RTFlex
 		
 		public var makeParagraph:Boolean=false;
 		
-		public var align:String = Align.LEFT;
-		
-		public var font:String = Fonts.ARIAL;
-		public var fontSize:int=12; 
+		public var align:String = "";
 		
 		public var leftIndent:int=0;
 		public var rightIndent:int=0; 
 		
-		public var color:RGB = Colors.BLACK;
-		public var backgroundColor:RGB = Colors.WHITE
+		public var font:String = "";
+		public var fontSize:int=0; 
+		public var color:RGB;
+		public var backgroundColor:RGB;
 		
 		//if defined, this element will become a link to this url
 		public var url:String; 
@@ -38,11 +37,27 @@ package org.RTFlex
 		public function formatText(text:String,colorPos:int,backgroundColorPos:int,fontPos:int,safeText:Boolean=true):String{
 			var rtf:String = "{";
 			if(makeParagraph) rtf+="\\pard";
-			rtf+="\\f"+fontPos.toString();
-			rtf+="\\cb"+(backgroundColorPos+1).toString();  //Add one because color 0 is null
-			rtf+="\\cf"+(colorPos+1).toString(); //yup
-			rtf+=align;
+			
+			if(fontPos>0) rtf+="\\f"+fontPos.toString();
+			if(backgroundColorPos>0) rtf+="\\cb"+(backgroundColorPos+1).toString();  //Add one because color 0 is null
+			if(colorPos>0) rtf+="\\cf"+(colorPos+1).toString(); //yup
 			if(fontSize >0) rtf+="\\fs"+(fontSize*2).toString();
+			
+			switch(align){
+				case Align.CENTER:
+					rtf+="\qc";
+				break;
+				case Align.LEFT:
+					rtf+="\ql";
+				break;
+				case Align.FULL:
+					rtf+="\qj";
+				break;
+				case Align.RIGHT:
+					rtf+="\qr";
+				break;
+			}
+			
 			if(bold) rtf+="\\b";
 			if(italic) rtf+="\\i";
 			if(underline) rtf+="\\ul";
