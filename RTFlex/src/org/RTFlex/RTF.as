@@ -57,9 +57,7 @@ package org.RTFlex
 			if(!format){
 				format = new Format();
 			}
-			if(format.font.length>0 || format.color!=null || format.backgroundColor !=null){
-				checkTables(format);
-			}
+			checkTables(format);
 			var fontPos:int = fontTable.indexOf(format.font); //should return -1 if not found
 			var colorPos:int = colorTable.indexOf(format.color); 
 			var backgroundColorPos:int = colorTable.indexOf(format.backgroundColor);
@@ -75,9 +73,7 @@ package org.RTFlex
 		
 		public function addTextGroup(name:String,format:Format):void{
 			if(groupIndex(name)<0){//make sure we don't have duplicate groups!
-				if(format.font.length>0 || format.color!=null || format.backgroundColor !=null){
-					checkTables(format);
-				}
+				checkTables(format);
 				var fontPos:int = fontTable.indexOf(format.font);
 				var colorPos:int = colorTable.indexOf(format.color);
 				var backgroundColorPos:int = colorTable.indexOf(format.backgroundColor);
@@ -130,13 +126,13 @@ package org.RTFlex
 		 	var fontPos:int = fontTable.indexOf(format.font);
 			var colorPos:int = colorTable.indexOf(format.color);
 			var backgroundColorPos:int = colorTable.indexOf(format.backgroundColor);
-			if(fontPos<0){ 
-				fontTable.push(format.font);
+			if(fontPos<0 && format.font.length>0){ 
+				fontTable.push(format.font); 
 			}
-			if(colorPos<0){
+			if(colorPos<0&&format.color!=null){
 				colorTable.push(format.color);
 			}
-			if(backgroundColorPos<0){
+			if(backgroundColorPos<0&&format.backgroundColor!=null){
 				colorTable.push(format.backgroundColor);
 			}
 		 }
@@ -212,7 +208,7 @@ package org.RTFlex
 				var buffer:ByteArray = new ByteArray();
 				buffer.writeMultiByte(createDocument(),"ansi");
 				return buffer;
-			}else{
+			}else{ 
 
 				var header:URLRequestHeader = new URLRequestHeader ("Content-type", "application/octet-stream");
 				var myRequest:URLRequest = new URLRequest ( url+'?name='+fileName+'&method='+downloadMethod );
