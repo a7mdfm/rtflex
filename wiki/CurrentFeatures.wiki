@@ -19,7 +19,7 @@ Use the Format() object to set these properties, then pass it along.
   * superScript:Boolean;
   * subScript:Boolean;
   * makeParagraph:Boolean;
-  * align:String = use statics from Align (not currently implemented easy to add)
+  * align:String = use statics from Align 
   * font: any font string
   * fontSize; 
   * leftIndent:int=0;
