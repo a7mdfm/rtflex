@@ -1,5 +1,12 @@
 package org.RTFlex
 {
+	
+	/**
+	 *  
+	 * Probably going to change tihs class later to accept HTML color code or something
+	 * 
+	 **/
+	 
 	public class RGB
 	{
 		public var red:int;
