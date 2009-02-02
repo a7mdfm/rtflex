@@ -6,7 +6,7 @@ Right now I'm using a modified version of the create.php translated to CF from t
 {{{
 var document:RTF = new RTF();
 document.writeText("Any text you want goes here");
-document.save(Method.REMOTE,"save.php","inline","anything.rtf","_blank");
+document.save(Method.REMOTE,"save.cfm","inline","anything.rtf","_blank");
 }}}
 Thinking out loud: format will probably become optional in the future... if not provided, and group is, attempt to inherit from group. If it is supplied and group is supplied the inherit unset values. 
 
