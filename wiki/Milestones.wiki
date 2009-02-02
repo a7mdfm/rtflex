@@ -1,25 +1,13 @@
 #summary Project milestones
 
-= Introduction =
+= Ideas and Goals =
 
-This document outlines the project goals
-
-== 1 == 
-  * stable but feature limited
-
-== 2 ==
   * create static libraries for mac, pc, and linux font names and families
   * add support for hyperlinks 
   * inline support for commands.
-
-== 3 ==
   * add image support
   * add stylesheet support
-
-== 4 ==
   * images: scaling, positioning, size
   * headers, footers, sectioning 
-
-== 5 == 
   * implement easy, automatic, footer notes
   * easy way to capture a screen element and insert as image
