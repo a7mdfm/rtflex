@@ -1,3 +1,0 @@
-Image Support,
-Better saving code,
-Better support for format inheritence 
