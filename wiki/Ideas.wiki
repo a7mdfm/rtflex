@@ -2,7 +2,7 @@
 
 = Ideas and Goals =
 
-  * create static libraries for mac, pc, and linux font names and families
+  * create static classes to store info on mac, pc, and linux font names and families
   * add support for hyperlinks 
   * inline support for commands.
   * add image support
