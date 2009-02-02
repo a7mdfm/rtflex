@@ -1,5 +1,9 @@
 #summary Changes made
 #labels changes,Featured
 
-|| 0.012 || Made format optional. Text styles not defined in a format will be inherited from the group format. Small changes to structure. Text alignment now working ||
+|| *BIN Version* || *Changes* ||
+|| 0.012 ||  * Made format optional  
+  * Text styles not defined in a format will be inherited from the group format
+  * Small changes to structure
+  * Text alignment now working ||
 || 0.01  || First build. || 
