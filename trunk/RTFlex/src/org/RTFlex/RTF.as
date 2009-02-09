@@ -69,6 +69,9 @@ package org.RTFlex
 			}
 		} 
 		
+		public function addTableElement(table:TableElement):void{
+			elements.push(table);
+		}
 		public function addTextGroup(name:String,format:Format):void{
 			if(groupIndex(name)<0){//make sure we don't have duplicate groups!
 				checkTables(format);
@@ -183,6 +186,8 @@ package org.RTFlex
 		 			output+=GroupElement(elements[i]).getRTFCode();
 		 		}else if(elements[i] is TextElement){
 		 			output+=TextElement(elements[i]).getRTFCode();
+		 		}else if(elements[i] is TableElement){
+		 			output+=TableElement(elements[i]).getRTFCode();
 		 		}else if(elements[i] is String){
 		 			output+=elements[i];
 		 		}
