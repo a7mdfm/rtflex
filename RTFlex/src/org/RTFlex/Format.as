@@ -45,16 +45,16 @@ package org.RTFlex
 			
 			switch(align){
 				case Align.CENTER:
-					rtf+="\qc";
+					rtf+="\\qc";
 				break;
 				case Align.LEFT:
-					rtf+="\ql";
+					rtf+="\\ql";
 				break;
 				case Align.FULL:
-					rtf+="\qj";
+					rtf+="\\qj";
 				break;
 				case Align.RIGHT:
-					rtf+="\qr";
+					rtf+="\\qr";
 				break;
 			}
 			
