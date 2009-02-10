@@ -5,6 +5,8 @@
  **/
 package org.RTFlex
 {
+	import mx.utils.StringUtil;
+	
 	public class Format
 	{
 		public var underline:Boolean=false;
@@ -80,14 +82,18 @@ package org.RTFlex
 		}
 		
 		private function getRTFSafeText(text:String):String{
-			var safeText:String = text;
-			safeText.split('\\').join('\\\\'); //turn all single back slashes into double
-			safeText.split('{').join('\\{'); 
-			safeText.split('}').join('\\}'); 
-			safeText.split('~').join('\\~'); 
-			safeText.split('-').join('\\-'); 
-			safeText.split('_').join('\\_'); 			
-			return safeText;
+			var safeText:String = text; 
+			safeText = safeText.split('\\').join('\\\\'); //turn all single back slashes into double
+			safeText = safeText.split('{').join('\\{');  
+			safeText = safeText.split('}').join('\\}');  
+			safeText = safeText.split('~').join('\\~');  
+			safeText = safeText.split('-').join('\\-');       
+			safeText = safeText.split('_').join('\\_');   
+			//turns line breaks into \line commands
+			safeText = safeText.split('\n\r').join(' \\line ');		
+			safeText = safeText.split('\n').join(' \\line ');  
+			safeText = safeText.split('\r').join(' \\line '); 	
+			return safeText; 
 		}
 	}
 }
