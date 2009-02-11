@@ -37,9 +37,8 @@ header.font = FONTS.TIMES_NEW_ROMAN;
 body.fontSize = 12;
 body.font = FONTS.ARIAL;
 
-document.writeText("This is a header",header);
-document.writeText("This is the body of the document",body);
-document.addLineBreak();
-document.writeText("Another header",header);
-document.writeText("More body text.",body);
+document.writeText("This is a header \n",header);
+document.writeText("This is the body of the document \n",body);
+document.writeText("Another header \n",header);
+document.writeText("More body text. \n",body);
 }}}
