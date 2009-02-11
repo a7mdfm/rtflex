@@ -88,7 +88,7 @@ package org.RTFlex
 			safeText = safeText.split('}').join('\\}');  
 			safeText = safeText.split('~').join('\\~');  
 			safeText = safeText.split('-').join('\\-');       
-			safeText = safeText.split('_').join('\\_');   
+			safeText = safeText.split('_').join('\\_');    
 			//turns line breaks into \line commands
 			safeText = safeText.split('\n\r').join(' \\line ');		
 			safeText = safeText.split('\n').join(' \\line ');  
