@@ -83,6 +83,7 @@ package org.RTFlex
 		
 		private function getRTFSafeText(text:String):String{
 			var safeText:String = text; 
+			if(safeText == null) return ""; //just in case nothing got passed in somehow
 			safeText = safeText.split('\\').join('\\\\'); //turn all single back slashes into double
 			safeText = safeText.split('{').join('\\{');  
 			safeText = safeText.split('}').join('\\}');  
